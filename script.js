@@ -49,6 +49,7 @@ fetch(`https://quizapi.io/api/v1/questions?apiKey=TM7jRsopbYOoYsKZTcQ7eidrz68jRf
 .then(data=>data.forEach((element,index)=>{
     
     Quizzes.push(element)
+    console.log(Quizzes)
  
 }
 
@@ -74,11 +75,15 @@ function showQuiz()
     listElement.innerHTML=""
     //deselectAnswers()
     let quiz=Quizzes[currentQuiz]
+    // let answerEl=Quizzes[currentQuiz].correct_answer
+    // console.log(answerEl)
+
     document.getElementById("question").innerHTML=quiz.question
     
     
     for (ans in quiz.answers)
     {
+        
            //check if ans is null
       if(quiz.answers[ans]!=null)
       {
@@ -115,7 +120,7 @@ function showQuiz()
 function getSelected() {
     let answerEls = document.querySelectorAll(".answer");
     let answer = undefined;
-    console.log(answerEls)
+    //console.log(answerEls)
 
     answerEls.forEach((elementAnswer) => {
         if (elementAnswer.checked) {
@@ -136,11 +141,11 @@ function deselectAnswers() {
 submitBtn.addEventListener("click", () => {
     // check to see the answer
     const answer = getSelected();
-    console.log('welcome')
-    console.log(answer)
+    // console.log('welcome')
+    // console.log(answer)
 
     if (answer) {
-        if (answer === Quizzes[currentQuiz].correct) {
+        if (answer === Quizzes[currentQuiz].correct_answer) {
             score++;
         }
 
@@ -157,7 +162,7 @@ submitBtn.addEventListener("click", () => {
             
             quizContainerElement.appendChild(h2Element)
             let resultImg=document.createElement('img')
-            resultImg.setAttribute("src",`https://image-charts.com/chart?chan&chd=a:${score}|${Quizzes.length-score}&chf=ps0-0%2Clg%2C45%2Cffeb3b%2C0.2%2Cf44336%2C1%7Cps0-1%2Clg%2C45%2C8bc34a%2C0.2%2C009688%2C1&chl=Right|Wrong&chs=300x190&cht=p`)
+            resultImg.setAttribute("src",`https://image-charts.com/chart?chan&chd=a:${score}|${Quizzes.length-score}&chf=ps0-0%2Clg%2C45%2Cffeb3b%2C0.2%2Cf44336%2C1%7Cps0-1%2Clg%2C45%2C8bc34a%2C0.2%2C009688%2C1&chl=Right|Wrong&chs=300x190&cht=p3`)
             resultImg.setAttribute('class','result-img')
             quizContainerElement.appendChild(resultImg)
             let btn=document.createElement("button")

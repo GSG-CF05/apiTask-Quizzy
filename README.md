@@ -1,1 +1,1 @@
-# apiTask-Quizzy
+# Quizzy

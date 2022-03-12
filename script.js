@@ -110,9 +110,15 @@ function showQuiz()
 {
     listElement.innerHTML=""
     //deselectAnswers()
+    if (Quizzes.length==0) setTimeout(()=>{console.log('No Quiz Questions yet')},1000)
+    else{
     let quiz=Quizzes[currentQuiz]
+    
+
+    
     // let answerEl=Quizzes[currentQuiz].correct_answer
     // console.log(answerEl)
+    
 
     document.getElementById("question").innerHTML=quiz.question
     
@@ -148,6 +154,7 @@ function showQuiz()
 
        
     }
+}
         
 
 }

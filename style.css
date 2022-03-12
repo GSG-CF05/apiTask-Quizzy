@@ -48,7 +48,30 @@ button {
   width: 100%;
   padding: 1.3rem;
 }
-
+.result-button {
+  background-color: #93d865;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+  display: block;
+  font-family: inherit;
+  font-size: 1.1rem;
+  width: 100%;
+  padding: 1.3rem;
+}
+.share-button {
+  background-color: #0d11eb;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+  display: block;
+  font-family: inherit;
+  font-size: 1.1rem;
+  width: 100%;
+  padding: 1.3rem;
+}
 button:hover {
   background-color: #732d91;
 }

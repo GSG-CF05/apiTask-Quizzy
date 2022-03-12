@@ -27,7 +27,7 @@ Quiz Application using [quizapi.io](https://quizapi.io/) API which test your kno
 
 ## How do I get the project on my local machine?
 
-### You have many options to open the app on Local Machine, ##I'll suggest you two ways:
+### You have many options to open the app on Local Machine, I'll suggest you two ways:
 
 :one: The First One Steps:
 

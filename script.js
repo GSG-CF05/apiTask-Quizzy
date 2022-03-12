@@ -1,3 +1,10 @@
+
+window.addEventListener("load", function () {
+    const loader = document.querySelector(".loader");
+    loader.className += " hidden"; // class "loader hidden"
+});
+
+
 //! Short Your link using (Shrtcode API) https://github.com/FayasNoushad/Short-Link-API
 function shortUrl(longUrl){
     
@@ -9,7 +16,7 @@ function shortUrl(longUrl){
         let shareLink=document.createElement('button')
         shareLink.setAttribute('class','shareLink')
         
-        shareLink.textContent=data.result['full_share_link']
+        shareLink.textContent=data.result['short_link2']
         shareLink.setAttribute('target',data.result['full_share_link'])
         
         document.getElementById('btn').remove()
@@ -23,8 +30,11 @@ function shortUrl(longUrl){
       })
     .catch(error=>console.log(error))
 }
+
+
 //! return Ip using (cloudflare API) https://github.com/fawazahmed0/cloudflare-trace-api
 let ipv
+let ipAddressElement=document.querySelector('.ip-address')
 function ipAddress(){
    fetch('https://1.1.1.1/cdn-cgi/trace')
     .then(data=>data.text())
@@ -33,6 +43,7 @@ function ipAddress(){
         localStorage.setItem('ip',item)
         ipv=item
         console.log('Inside',ipv)
+        ipAddressElement.textContent=`Ip Address: ${item.slice(3)}`
     
     }))
     .catch(error=>console.log(error))

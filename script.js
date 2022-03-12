@@ -85,7 +85,7 @@ fetch(`https://quizapi.io/api/v1/questions?apiKey=TM7jRsopbYOoYsKZTcQ7eidrz68jRf
 .then(data=>data.forEach((element,index)=>{
     
     Quizzes.push(element)
-    console.log(Quizzes)
+    //console.log(Quizzes)
  
 }
 
